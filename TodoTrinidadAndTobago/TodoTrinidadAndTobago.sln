@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoTrinidadAndTobago", "TodoTrinidadAndTobago\TodoTrinidadAndTobago.csproj", "{7632F56B-9040-4AAA-9856-E0908DC3225C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoTrinidadAndTobago.Tests", "TodoTrinidadAndTobago.Tests\TodoTrinidadAndTobago.Tests.csproj", "{54CEE58B-0EC0-447C-B1CC-56D7710DF06C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.TnT", "Todo.TnT\Todo.TnT.csproj", "{C0835EE2-E5F2-4145-8145-AE063A527863}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7632F56B-9040-4AAA-9856-E0908DC3225C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7632F56B-9040-4AAA-9856-E0908DC3225C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7632F56B-9040-4AAA-9856-E0908DC3225C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7632F56B-9040-4AAA-9856-E0908DC3225C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CEE58B-0EC0-447C-B1CC-56D7710DF06C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CEE58B-0EC0-447C-B1CC-56D7710DF06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CEE58B-0EC0-447C-B1CC-56D7710DF06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CEE58B-0EC0-447C-B1CC-56D7710DF06C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0835EE2-E5F2-4145-8145-AE063A527863}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0835EE2-E5F2-4145-8145-AE063A527863}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0835EE2-E5F2-4145-8145-AE063A527863}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0835EE2-E5F2-4145-8145-AE063A527863}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

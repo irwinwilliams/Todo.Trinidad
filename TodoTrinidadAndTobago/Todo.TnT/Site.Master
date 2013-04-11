@@ -1,0 +1,83 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Todo.TnT.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Todo.TnT</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <asp:PlaceHolder runat="server">    
+        <%: Styles.Render("~/css/bootstrap.min.css") %>
+        <%: Styles.Render("~/css/bootstrap-responsive.min.css") %>
+        <%: Styles.Render("~/css/main.css") %>
+        <script src="http://code.jquery.com/jquery.js"></script>
+    </asp:PlaceHolder>  
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://twitter.github.io/bootstrap/assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="http://twitter.github.io/bootstrap/assets/ico/favicon.png">
+
+</head>
+<body>
+    <form runat="server">
+    <div class="container">
+
+      <div class="masthead">
+        <h3 class="muted">TODO.TnT</h3>
+          <asp:ContentPlaceHolder ID="NaveSection" runat="server">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li class="active">
+                    <a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+              </asp:ContentPlaceHolder>
+      </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+        </asp:ContentPlaceHolder>
+      <hr>
+
+      <div class="footer">
+        <p>© iStarr and smoo 2013</p>
+      </div>
+
+    </div> <!-- /container -->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%--<script src="./Template · Bootstrap_files/jquery.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-transition.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-alert.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-modal.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-dropdown.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-scrollspy.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-tab.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-tooltip.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-popover.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-button.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-collapse.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-carousel.js"></script>
+    <script src="./Template · Bootstrap_files/bootstrap-typeahead.js"></script>--%>
+
+    
+    </form>
+</body>
+</html>
