@@ -16,27 +16,29 @@
   });
 
         function addLayerLink(name) {
-            var layerToggle = $("<a>");
-            layerToggle.html("Hide " + name + " (" + layers[name].length + ")");
-            layerToggle.attr("data-state", "hide");
-            layerToggle.attr("data-name", name);
-            layerToggle.click(function () {
-                var anchor = $(this);
-                var aName = anchor.attr("data-name");
-                if (anchor.attr("data-state") == "hide") {
-                    anchor.attr("data-state", "show");
-                    anchor.html("Show " + aName + " (" + layers[aName].length + ")" );
-                    hideLayer(aName);
-                }
-                else {
-                    anchor.attr("data-state", "hide");
-                    anchor.html("Hide " + aName + " (" + layers[aName].length + ")");
-                    showLayer(aName);
-                }
+            if (layers[name].length > 0) {
+                var layerToggle = $("<a>");
+                layerToggle.html("Hide " + name + " (" + layers[name].length + ")");
+                layerToggle.attr("data-state", "hide");
+                layerToggle.attr("data-name", name);
+                layerToggle.click(function () {
+                    var anchor = $(this);
+                    var aName = anchor.attr("data-name");
+                    if (anchor.attr("data-state") == "hide") {
+                        anchor.attr("data-state", "show");
+                        anchor.html("Show " + aName + " (" + layers[aName].length + ")");
+                        hideLayer(aName);
+                    }
+                    else {
+                        anchor.attr("data-state", "hide");
+                        anchor.html("Hide " + aName + " (" + layers[aName].length + ")");
+                        showLayer(aName);
+                    }
 
-            });
+                });
 
-            $("#layers-container").append(layerToggle);
+                $("#layers-container").append(layerToggle);
+            }
         }
 
         function logLocs() {
@@ -105,17 +107,22 @@
             
 
             google.maps.event.addListener(marker, 'click', function () {
+                @*var shareBtn = '<div class="fb-like" data-href="http://todotnt.anandcsingh.com/Map" data-send="false" data-layout="button_count" data-width="450" data-show-faces="true"></div>';
+                var tweetBtn ="<a href='https://twitter.com/share' class='twitter-share-button' data-url='http://anandcsingh'>Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');< /script>";
+                *@var infoData = "<strong>" + marker.getTitle() + "</strong><br/>" + desc;
                 if (this.url) {
-                    infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc + "<br/><a target='_blank' href='" + this.url + "'>" + this.url + "</a>");
+                    infoData = infoData + "<br/><a target='_blank' href='" + this.url + "'>" + this.url + "</a>";
+                    //infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc + "<br/><a target='_blank' href='" + this.url + "'>" + this.url + "</a>");
                 } else {
-                    infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc);
+                    //infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc);
                 }
+                //infoData = infoData + shareBtn;
+                infowindow.setContent(infoData);
                 infowindow.open(map, marker);
             });
             if (isAd) {
                 marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
                 layers["Ad"].push(marker);
-
             }
             else {
                 layers[cat].push(marker);
@@ -191,7 +198,14 @@
     </style>
         }
         
-
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <p id="layers-container">
     <h5>Interesting Places</h5>
 
