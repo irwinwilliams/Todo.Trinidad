@@ -105,7 +105,11 @@ namespace TodoSample.Controllers
 
         }
 
-
+        public ActionResult View(int id)
+        {
+            var ad = db.Ads.FirstOrDefault(a => a.ID == id);
+            return View("Details", ad);
+        }
 
         //
 

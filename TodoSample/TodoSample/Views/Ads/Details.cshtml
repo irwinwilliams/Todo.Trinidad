@@ -9,70 +9,78 @@
 
 <fieldset>
     <legend>Ad</legend>
-    <div class="display-label">
-         @Html.DisplayNameFor(model => model.Title)
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
-
-    <div class="display-label">
+    <table class="dataTable">
+        <tr>
+            <td><div class="display-label">
          @Html.DisplayNameFor(model => model.Detail)
-    </div>
-    <div class="display-field">
+    </div></td>
+            <td><div class="display-field">
         @Html.DisplayFor(model => model.Detail)
-    </div>
-
-    <div class="display-label">
+    </div></td>
+        </tr>
+        <tr>
+            <td> <div class="display-label">
          @Html.DisplayNameFor(model => model.Url)
-    </div>
-    <div class="display-field">
+    </div></td>
+            <td><div class="display-field">
         @Html.DisplayFor(model => model.Url)
-    </div>
-
-    <div class="display-label">
+    </div></td>
+        </tr>
+        <tr>
+            <td><div class="display-label">
         Category
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.CategoryID)
-    </div>
-
-    <div class="display-label">
+    </div></td>
+            <td><div class="display-field">
+        @Html.DisplayFor(model => model.Category.Name)
+    </div></td>
+        </tr>
+        <tr>
+            <td><div class="display-label">
          @Html.DisplayNameFor(model => model.Views)
-    </div>
-    <div class="display-field">
+    </div></td>
+            <td><div class="display-field">
         @Html.DisplayFor(model => model.Views)
-    </div>
-
-    <div class="display-label">
+    </div></td>
+        </tr>
+        <tr>
+            <td><div class="display-label">
          @Html.DisplayNameFor(model => model.Clicks)
-    </div>
-    <div class="display-field">
+    </div></td>
+            <td><div class="display-field">
         @Html.DisplayFor(model => model.Clicks)
-    </div>
-
-    <div class="display-label">
+    </div></td>
+        </tr>
+        <tr>
+            <td><div class="display-label">
          Ad Type
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.AdTypeID)
-    </div>
-
-    <div class="display-label">
+    </div></td>
+            <td><div class="display-field">
+        @Html.DisplayFor(model => model.AdType.Name)
+    </div></td>
+        </tr>
+        <tr>
+            <td> <div class="display-label">
          @Html.DisplayNameFor(model => model.Latitude)
-    </div>
-    <div class="display-field">
+    </div></td>
+            <td><div class="display-field">
         @Html.DisplayFor(model => model.Latitude)
-    </div>
-
-    <div class="display-label">
+    </div></td>
+        </tr>
+        <tr>
+            <td><div class="display-label">
          @Html.DisplayNameFor(model => model.Longitude)
-    </div>
-    <div class="display-field">
+    </div></td>
+            <td><div class="display-field">
         @Html.DisplayFor(model => model.Longitude)
-    </div>
+    </div></td>
+        </tr>
+    </table>
+
+
+    
+    
 </fieldset>
 <p>
-   
+   @Html.ActionLink("View Bill", "Index") | 
     @Html.ActionLink("Back to List", "Index")
 </p>
