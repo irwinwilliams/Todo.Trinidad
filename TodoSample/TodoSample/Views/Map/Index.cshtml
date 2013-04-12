@@ -9,27 +9,110 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaUK25OBJxjVADJr7p9wlKcpwu2D4_KVc&sensor=true"></script>
     <script  type="text/javascript">
         var map;
-        var layers = [];
+        var layers = {};
         var infowindow = new google.maps.InfoWindow(
   {
       size: new google.maps.Size(150, 50)
   });
-        function initMarkers() {
 
+        function addLayerLink(name) {
+            var layerToggle = $("<a>");
+            layerToggle.html("Hide " + name + " (" + layers[name].length + ")");
+            layerToggle.attr("data-state", "hide");
+            layerToggle.attr("data-name", name);
+            layerToggle.click(function () {
+                var anchor = $(this);
+                var aName = anchor.attr("data-name");
+                if (anchor.attr("data-state") == "hide") {
+                    anchor.attr("data-state", "show");
+                    anchor.html("Show " + aName + " (" + layers[aName].length + ")" );
+                    hideLayer(aName);
+                }
+                else {
+                    anchor.attr("data-state", "hide");
+                    anchor.html("Hide " + aName + " (" + layers[aName].length + ")");
+                    showLayer(aName);
+                }
+
+            });
+
+            $("#layers-container").append(layerToggle);
+        }
+
+        function logLocs() {
+            var d = [];
+            for(var i = 0; i < layers["Ad"].length; i++) {
+                var ex = layers["Ad"][i];
+                var item = {};
+                item.lat = ex.position.lat();
+                item.long = ex.position.lng();
+                item.cat = "Ad";
+                item.name = "name";
+                item.description = "desc";
+                d.push(item);
+            }
+
+            console.log(JSON.stringify(d));
+        }
+
+        function initLayers() {
+            $.get("../categories", null, function (data) {
+                
+                for (var i = 0; i < data.length; i++) {
+                    layers[data[i].name] = [];
+                }
+                layers[undefined] = [];
+                layers["Ad"] = [];
+                
+
+                $.get("data/tntpois.js", null, function (data) {
+                    data = JSON.parse(data);
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat);
+                    }
+
+                    for (layer in layers) {
+                        addLayerLink(layer);
+                    }
+                });
+
+                $.get("data/ads.js", null, function (data) {
+                    data = JSON.parse(data);
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        item.url = "http://www.kfc-tt.com/";
+                        addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat, item.url);
+                    }
+
+                });
+            });
 
         }
 
-        function addMarker(location, name, desc, cat) {
+        function addMarker(location, name, desc, cat, link) {
             var marker = new google.maps.Marker({
                 position: location,
                 title: name,
+                animation: google.maps.Animation.DROP,
+                url: link,
                 map: map
             });
 
+            if (cat == "Ad") {
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+            }
+
             google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(desc);
+                if (this.url) {
+                    infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc + "<br/><a target='_blank' href='" + this.url + "'>" + this.url + "</a>");
+                } else {
+                    infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc);
+                }
                 infowindow.open(map, marker);
             });
+            
+            layers[cat].push(marker);
         }
 
         function hideLayer(layerIndex) {
@@ -62,17 +145,11 @@
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            initLayers();
 
-            $.get("data/tntpois.js", null, function (data) {
-                data = JSON.parse(data);
-                for (var i = 0; i < data.length; i++) {
-                    var item = data[i];
-                    addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat);
-                }
-            });
-
+            
             //google.maps.event.addListener(map, 'click', function (event) {
-            //    addMarker(event.latLng);
+            //    addMarker(event.latLng, "ad", "ad", "Ad");
             //});
 
             google.maps.event.addListener(map, 'click', function () {
@@ -88,11 +165,14 @@
             width:960px;
             height:600px;
         }
+        #layers-container a {
+            margin:5px;
+        }
 
     </style>
         }
         
 
-
+<p id="layers-container"></p>
 <div id="map-canvas">
 </div>
