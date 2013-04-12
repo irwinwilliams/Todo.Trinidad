@@ -73,16 +73,19 @@
                     }
 
                     for (layer in layers) {
+                        if (layer == "Ad") {
+                            continue;
+                        }
                         addLayerLink(layer);
                     }
                 });
 
-                $.get("data/ads.js", null, function (data) {
-                    data = JSON.parse(data);
+                $.get("../ads/Details/20", null, function (data) {
+                    //data = JSON.parse(data);
                     for (var i = 0; i < data.length; i++) {
                         var item = data[i];
-                        item.url = "http://www.kfc-tt.com/";
-                        addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat, item.url);
+                        //item.url = "http://www.kfc-tt.com/";
+                        addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat, item.url, true);
                     }
 
                 });
@@ -90,7 +93,7 @@
 
         }
 
-        function addMarker(location, name, desc, cat, link) {
+        function addMarker(location, name, desc, cat, link, isAd) {
             var marker = new google.maps.Marker({
                 position: location,
                 title: name,
@@ -99,9 +102,7 @@
                 map: map
             });
 
-            if (cat == "Ad") {
-                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
-            }
+            
 
             google.maps.event.addListener(marker, 'click', function () {
                 if (this.url) {
@@ -111,8 +112,15 @@
                 }
                 infowindow.open(map, marker);
             });
+            if (isAd) {
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+                layers["Ad"].push(marker);
+
+            }
+            else {
+                layers[cat].push(marker);
+            }
             
-            layers[cat].push(marker);
         }
 
         function hideLayer(layerIndex) {
