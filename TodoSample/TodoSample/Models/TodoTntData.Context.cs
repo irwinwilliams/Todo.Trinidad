@@ -12,6 +12,9 @@ namespace TodoSample.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class todotntEntities : DbContext
     {
@@ -29,5 +32,92 @@ namespace TodoSample.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<AdType> AdTypes { get; set; }
+    
+        public virtual int Ads_GetByFactors(Nullable<int> fNF, Nullable<int> leisure, Nullable<int> business, Nullable<int> wedding, Nullable<int> study, Nullable<int> other)
+        {
+            var fNFParameter = fNF.HasValue ?
+                new ObjectParameter("FNF", fNF) :
+                new ObjectParameter("FNF", typeof(int));
+    
+            var leisureParameter = leisure.HasValue ?
+                new ObjectParameter("Leisure", leisure) :
+                new ObjectParameter("Leisure", typeof(int));
+    
+            var businessParameter = business.HasValue ?
+                new ObjectParameter("Business", business) :
+                new ObjectParameter("Business", typeof(int));
+    
+            var weddingParameter = wedding.HasValue ?
+                new ObjectParameter("Wedding", wedding) :
+                new ObjectParameter("Wedding", typeof(int));
+    
+            var studyParameter = study.HasValue ?
+                new ObjectParameter("Study", study) :
+                new ObjectParameter("Study", typeof(int));
+    
+            var otherParameter = other.HasValue ?
+                new ObjectParameter("Other", other) :
+                new ObjectParameter("Other", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Ads_GetByFactors", fNFParameter, leisureParameter, businessParameter, weddingParameter, studyParameter, otherParameter);
+        }
+    
+        public virtual ObjectResult<Ad> GetAdsByFactors(Nullable<int> fNF, Nullable<int> leisure, Nullable<int> business, Nullable<int> wedding, Nullable<int> study, Nullable<int> other)
+        {
+            var fNFParameter = fNF.HasValue ?
+                new ObjectParameter("FNF", fNF) :
+                new ObjectParameter("FNF", typeof(int));
+    
+            var leisureParameter = leisure.HasValue ?
+                new ObjectParameter("Leisure", leisure) :
+                new ObjectParameter("Leisure", typeof(int));
+    
+            var businessParameter = business.HasValue ?
+                new ObjectParameter("Business", business) :
+                new ObjectParameter("Business", typeof(int));
+    
+            var weddingParameter = wedding.HasValue ?
+                new ObjectParameter("Wedding", wedding) :
+                new ObjectParameter("Wedding", typeof(int));
+    
+            var studyParameter = study.HasValue ?
+                new ObjectParameter("Study", study) :
+                new ObjectParameter("Study", typeof(int));
+    
+            var otherParameter = other.HasValue ?
+                new ObjectParameter("Other", other) :
+                new ObjectParameter("Other", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ad>("GetAdsByFactors", fNFParameter, leisureParameter, businessParameter, weddingParameter, studyParameter, otherParameter);
+        }
+    
+        public virtual ObjectResult<Ad> GetAdsByFactors(Nullable<int> fNF, Nullable<int> leisure, Nullable<int> business, Nullable<int> wedding, Nullable<int> study, Nullable<int> other, MergeOption mergeOption)
+        {
+            var fNFParameter = fNF.HasValue ?
+                new ObjectParameter("FNF", fNF) :
+                new ObjectParameter("FNF", typeof(int));
+    
+            var leisureParameter = leisure.HasValue ?
+                new ObjectParameter("Leisure", leisure) :
+                new ObjectParameter("Leisure", typeof(int));
+    
+            var businessParameter = business.HasValue ?
+                new ObjectParameter("Business", business) :
+                new ObjectParameter("Business", typeof(int));
+    
+            var weddingParameter = wedding.HasValue ?
+                new ObjectParameter("Wedding", wedding) :
+                new ObjectParameter("Wedding", typeof(int));
+    
+            var studyParameter = study.HasValue ?
+                new ObjectParameter("Study", study) :
+                new ObjectParameter("Study", typeof(int));
+    
+            var otherParameter = other.HasValue ?
+                new ObjectParameter("Other", other) :
+                new ObjectParameter("Other", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Ad>("GetAdsByFactors", mergeOption, fNFParameter, leisureParameter, businessParameter, weddingParameter, studyParameter, otherParameter);
+        }
     }
 }

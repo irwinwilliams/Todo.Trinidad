@@ -199,6 +199,7 @@
     <Compile Include="Models\Ad.cs">
       <DependentUpon>TodoTntData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AdFactor.cs" />
     <Compile Include="Models\AdType.cs">
       <DependentUpon>TodoTntData.tt</DependentUpon>
     </Compile>
@@ -287,6 +288,7 @@
     <Content Include="data\tntpois.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="XMLFile1.xml" />
     <EntityDeploy Include="Models\TodoTntData.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>TodoTntData.Designer.cs</LastGenOutput>
@@ -385,7 +387,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>30253</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:49803/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

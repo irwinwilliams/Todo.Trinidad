@@ -93,4 +93,12 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="Ads_GetByFactors" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="todo_user">
+    <Parameter Name="FNF" Type="int" Mode="In" />
+    <Parameter Name="Leisure" Type="int" Mode="In" />
+    <Parameter Name="Business" Type="int" Mode="In" />
+    <Parameter Name="Wedding" Type="int" Mode="In" />
+    <Parameter Name="Study" Type="int" Mode="In" />
+    <Parameter Name="Other" Type="int" Mode="In" />
+  </Function>
 </Schema>

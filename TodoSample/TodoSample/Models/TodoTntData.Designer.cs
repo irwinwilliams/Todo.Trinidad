@@ -1,4 +1,4 @@
-﻿// Default code generation is disabled for model 'C:\Users\Yvonne\Documents\Visual Studio 2012\Projects\TodoSample\TodoSample\Models\TodoTntData.edmx'. 
+﻿// Default code generation is disabled for model 'E:\GitHub\Todo.Trinidad\TodoSample\TodoSample\Models\TodoTntData.edmx'. 
 // To enable default code generation, change the value of the 'Code Generation Strategy' designer
 // property to an alternate value. This property is available in the Properties Window when the model is
 // open in the designer.

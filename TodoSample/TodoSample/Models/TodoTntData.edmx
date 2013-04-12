@@ -98,6 +98,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="Ads_GetByFactors" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="todo_user">
+          <Parameter Name="FNF" Type="int" Mode="In" />
+          <Parameter Name="Leisure" Type="int" Mode="In" />
+          <Parameter Name="Business" Type="int" Mode="In" />
+          <Parameter Name="Wedding" Type="int" Mode="In" />
+          <Parameter Name="Study" Type="int" Mode="In" />
+          <Parameter Name="Other" Type="int" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -119,6 +127,22 @@
             <End Role="AdType" EntitySet="AdTypes" />
             <End Role="Ad" EntitySet="Ads" />
           </AssociationSet>
+          <FunctionImport Name="Ads_GetByFactors">
+            <Parameter Name="FNF" Mode="In" Type="Int32" />
+            <Parameter Name="Leisure" Mode="In" Type="Int32" />
+            <Parameter Name="Business" Mode="In" Type="Int32" />
+            <Parameter Name="Wedding" Mode="In" Type="Int32" />
+            <Parameter Name="Study" Mode="In" Type="Int32" />
+            <Parameter Name="Other" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAdsByFactors" EntitySet="Ads" ReturnType="Collection(todotntModel.Ad)">
+            <Parameter Name="FNF" Mode="In" Type="Int32" />
+            <Parameter Name="Leisure" Mode="In" Type="Int32" />
+            <Parameter Name="Business" Mode="In" Type="Int32" />
+            <Parameter Name="Wedding" Mode="In" Type="Int32" />
+            <Parameter Name="Study" Mode="In" Type="Int32" />
+            <Parameter Name="Other" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Ad">
           <Key>
@@ -250,6 +274,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="Ads_GetByFactors" FunctionName="todotntModel.Store.Ads_GetByFactors" />
+          <FunctionImportMapping FunctionImportName="GetAdsByFactors" FunctionName="todotntModel.Store.Ads_GetByFactors" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

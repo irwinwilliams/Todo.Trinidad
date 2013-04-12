@@ -44,5 +44,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Ads_GetByFactors" FunctionName="todotntModel.Store.Ads_GetByFactors" />
+    <FunctionImportMapping FunctionImportName="GetAdsByFactors" FunctionName="todotntModel.Store.Ads_GetByFactors" />
   </EntityContainerMapping>
 </Mapping>

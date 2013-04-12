@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2012 for Web
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoSample", "TodoSample\TodoSample.csproj", "{6AC847F1-76EC-45E4-8C9D-8E164B755F0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoSample.Tests", "TodoSample.Tests\TodoSample.Tests.csproj", "{8765AFD0-A8AA-41F7-B489-D73FD0164759}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.TnT", "Todo.TnT\Todo.TnT.csproj", "{5141C262-EFCA-4B53-9A05-EEA2535D45AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,12 @@ Global
 		{8765AFD0-A8AA-41F7-B489-D73FD0164759}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8765AFD0-A8AA-41F7-B489-D73FD0164759}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8765AFD0-A8AA-41F7-B489-D73FD0164759}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5141C262-EFCA-4B53-9A05-EEA2535D45AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5141C262-EFCA-4B53-9A05-EEA2535D45AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5141C262-EFCA-4B53-9A05-EEA2535D45AA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5141C262-EFCA-4B53-9A05-EEA2535D45AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5141C262-EFCA-4B53-9A05-EEA2535D45AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5141C262-EFCA-4B53-9A05-EEA2535D45AA}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

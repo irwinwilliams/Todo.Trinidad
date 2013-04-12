@@ -17,6 +17,22 @@
       <End Role="AdType" EntitySet="AdTypes" />
       <End Role="Ad" EntitySet="Ads" />
     </AssociationSet>
+    <FunctionImport Name="Ads_GetByFactors">
+      <Parameter Name="FNF" Mode="In" Type="Int32" />
+      <Parameter Name="Leisure" Mode="In" Type="Int32" />
+      <Parameter Name="Business" Mode="In" Type="Int32" />
+      <Parameter Name="Wedding" Mode="In" Type="Int32" />
+      <Parameter Name="Study" Mode="In" Type="Int32" />
+      <Parameter Name="Other" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetAdsByFactors" EntitySet="Ads" ReturnType="Collection(todotntModel.Ad)">
+      <Parameter Name="FNF" Mode="In" Type="Int32" />
+      <Parameter Name="Leisure" Mode="In" Type="Int32" />
+      <Parameter Name="Business" Mode="In" Type="Int32" />
+      <Parameter Name="Wedding" Mode="In" Type="Int32" />
+      <Parameter Name="Study" Mode="In" Type="Int32" />
+      <Parameter Name="Other" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Ad">
     <Key>

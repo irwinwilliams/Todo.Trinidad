@@ -1,13 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Linq;
+using TodoSample.Models;
 
 namespace TodoSample.Controllers
 {
     public class AdsController : Controller
     {
+        private static string atomdata = "https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic";
+        private static WebClient AtomService;
+        private static List<AdFactor> AdFactors;
+
+        static AdsController()
+        {
+            AtomService = new WebClient();
+            //AtomService.DownloadDataCompleted += AtomService_DownloadDataCompleted;
+            //AtomService.DownloadDataAsync(new Uri(atomdata));
+            var data = AtomService.DownloadData(new Uri(atomdata));
+            Process(data);
+        }
+
+        static void AtomService_DownloadDataCompleted(object sender, DownloadDataCompletedEventArgs e)
+        {
+            Process(e.Result);
+        }
+
+        private static void Process(byte[] data)
+        {
+            string textData = System.Text.Encoding.UTF8.GetString(data);
+
+            XNamespace atomNS = "http://www.w3.org/2005/Atom";
+            XNamespace dNS = "http://schemas.microsoft.com/ado/2007/08/dataservices";
+            XNamespace mNS = "http://schemas.microsoft.com/ado/2007/08/dataservices/metadata";
+            XNamespace gNS = "http://www.georss.org/georss";
+            var results = (from item in XElement.Parse(textData).Descendants(atomNS + "entry")
+                           select new AdFactor(
+                               item.Element(atomNS + "title").Value, 
+                               item.Element(atomNS + "content").Value));
+            AdFactors = results.ToList();
+        }
         //
         // GET: /Ads/
 
@@ -22,9 +57,38 @@ namespace TodoSample.Controllers
 
         public ActionResult Details(int id)
         {
-            TodoSample.Models.todotntEntities context = new Models.todotntEntities();
 
-            return View(context.Ads.First(a => a.ID == id));
+            //update
+            var data = AtomService.DownloadData(new Uri(atomdata));
+            Process(data);
+            var thisMonth = DateTime.Now.ToString("MMMM").ToUpper();
+            
+            var thisMonthsFactors = (from f in AdFactors
+                                    where f.Name.ToUpper() 
+                                    == thisMonth
+                                    select f).FirstOrDefault();
+            double sum = thisMonthsFactors.FNF + thisMonthsFactors.Leisure +
+                thisMonthsFactors.Business + thisMonthsFactors.Other + thisMonthsFactors.Study +
+                thisMonthsFactors.Wedding;
+            double rem = 100 - sum;
+
+            int fnf = (int)Math.Round(thisMonthsFactors.FNF / 100 * id, 0);
+            int lei = (int)Math.Round(thisMonthsFactors.Leisure / 100 * id, 0);
+            int biz = (int)Math.Round(thisMonthsFactors.Business / 100 * id, 0);
+            int wed = (int)Math.Round(thisMonthsFactors.Wedding / 100 * id, 0);
+            int sty = (int)Math.Round(thisMonthsFactors.Study / 100 * id, 0);
+            int oth = (int)Math.Round(thisMonthsFactors.Other / 100 * id, 0);
+
+            int fnfMore = (int)((rem / 2)/100 * id);
+            fnf += fnfMore;
+            lei += fnfMore;
+            
+
+            TodoSample.Models.todotntEntities context = new Models.todotntEntities();
+            context.Configuration.ProxyCreationEnabled = false;
+
+            var ads = context.GetAdsByFactors(fnf, lei, biz, wed, sty, oth).ToList();
+            return Json(ads, JsonRequestBehavior.AllowGet);
         }
 
         //
