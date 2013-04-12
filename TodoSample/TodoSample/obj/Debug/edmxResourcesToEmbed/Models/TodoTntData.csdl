@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="todotntModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="todotntEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ads" EntityType="todotntModel.Ad" />
+    <EntitySet Name="Categories" EntityType="todotntModel.Category" />
+    <EntitySet Name="Users" EntityType="todotntModel.User" />
+    <AssociationSet Name="FK_Ads_Categories" Association="todotntModel.FK_Ads_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Ads" EntitySet="Ads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ads_UserProfile" Association="todotntModel.FK_Ads_UserProfile">
+      <End Role="UserProfile" EntitySet="Users" />
+      <End Role="Ads" EntitySet="Ads" />
+    </AssociationSet>
+    <EntitySet Name="AdTypes" EntityType="todotntModel.AdType" />
+    <AssociationSet Name="FK_Ads_AdTypes" Association="todotntModel.FK_Ads_AdTypes">
+      <End Role="AdType" EntitySet="AdTypes" />
+      <End Role="Ad" EntitySet="Ads" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Ad">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Detail" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Url" Type="String" MaxLength="1500" Unicode="true" FixedLength="false" />
+    <Property Name="CategoryID" Type="Int32" />
+    <Property Name="Views" Type="Int32" />
+    <Property Name="Clicks" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="todotntModel.FK_Ads_Categories" FromRole="Ads" ToRole="Categories" />
+    <NavigationProperty Name="UserProfile" Relationship="todotntModel.FK_Ads_UserProfile" FromRole="Ads" ToRole="UserProfile" />
+    <Property Type="Int32" Name="AdTypeID" />
+    <Property Type="Decimal" Name="Latitude" Precision="18" Scale="10" />
+    <Property Type="Decimal" Name="Longitude" Precision="18" Scale="10" />
+    <NavigationProperty Name="AdType" Relationship="todotntModel.FK_Ads_AdTypes" FromRole="Ad" ToRole="AdType" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Detail" Type="String" MaxLength="1500" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Ads" Relationship="todotntModel.FK_Ads_Categories" FromRole="Categories" ToRole="Ads" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="56" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Ads" Relationship="todotntModel.FK_Ads_UserProfile" FromRole="UserProfile" ToRole="Ads" />
+  </EntityType>
+  <Association Name="FK_Ads_Categories">
+    <End Role="Categories" Type="todotntModel.Category" Multiplicity="0..1" />
+    <End Role="Ads" Type="todotntModel.Ad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ads">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ads_UserProfile">
+    <End Role="UserProfile" Type="todotntModel.User" Multiplicity="0..1" />
+    <End Role="Ads" Type="todotntModel.Ad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Ads">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AdType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Detail" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Ads" Relationship="todotntModel.FK_Ads_AdTypes" FromRole="AdType" ToRole="Ad" />
+  </EntityType>
+  <Association Name="FK_Ads_AdTypes">
+    <End Type="todotntModel.AdType" Role="AdType" Multiplicity="0..1" />
+    <End Type="todotntModel.Ad" Role="Ad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ad">
+        <PropertyRef Name="AdTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

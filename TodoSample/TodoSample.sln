@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoSample", "TodoSample\TodoSample.csproj", "{6AC847F1-76EC-45E4-8C9D-8E164B755F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoSample.Tests", "TodoSample.Tests\TodoSample.Tests.csproj", "{8765AFD0-A8AA-41F7-B489-D73FD0164759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AC847F1-76EC-45E4-8C9D-8E164B755F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC847F1-76EC-45E4-8C9D-8E164B755F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC847F1-76EC-45E4-8C9D-8E164B755F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC847F1-76EC-45E4-8C9D-8E164B755F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8765AFD0-A8AA-41F7-B489-D73FD0164759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8765AFD0-A8AA-41F7-B489-D73FD0164759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8765AFD0-A8AA-41F7-B489-D73FD0164759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8765AFD0-A8AA-41F7-B489-D73FD0164759}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

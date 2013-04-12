@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="todotntModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="todotntModelStoreContainer">
+    <EntitySet Name="Ads" EntityType="todotntModel.Store.Ads" store:Type="Tables" Schema="todo_user" />
+    <EntitySet Name="AdTypes" EntityType="todotntModel.Store.AdTypes" store:Type="Tables" Schema="todo_user" />
+    <EntitySet Name="Categories" EntityType="todotntModel.Store.Categories" store:Type="Tables" Schema="todo_user" />
+    <EntitySet Name="UserProfile" EntityType="todotntModel.Store.UserProfile" store:Type="Tables" Schema="todo_user" />
+    <AssociationSet Name="FK_Ads_AdTypes" Association="todotntModel.Store.FK_Ads_AdTypes">
+      <End Role="AdTypes" EntitySet="AdTypes" />
+      <End Role="Ads" EntitySet="Ads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ads_Categories" Association="todotntModel.Store.FK_Ads_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Ads" EntitySet="Ads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ads_UserProfile" Association="todotntModel.Store.FK_Ads_UserProfile">
+      <End Role="UserProfile" EntitySet="UserProfile" />
+      <End Role="Ads" EntitySet="Ads" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Ads">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="500" />
+    <Property Name="Url" Type="nvarchar" MaxLength="1500" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="Views" Type="int" />
+    <Property Name="Clicks" Type="int" />
+    <Property Name="AdTypeID" Type="int" />
+    <Property Name="Latitude" Type="numeric" Scale="10" />
+    <Property Name="Longitude" Type="numeric" Scale="10" />
+  </EntityType>
+  <EntityType Name="AdTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="Detail" Type="nvarchar" MaxLength="1500" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="56" />
+  </EntityType>
+  <Association Name="FK_Ads_AdTypes">
+    <End Role="AdTypes" Type="todotntModel.Store.AdTypes" Multiplicity="0..1" />
+    <End Role="Ads" Type="todotntModel.Store.Ads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ads">
+        <PropertyRef Name="AdTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ads_Categories">
+    <End Role="Categories" Type="todotntModel.Store.Categories" Multiplicity="0..1" />
+    <End Role="Ads" Type="todotntModel.Store.Ads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ads">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ads_UserProfile">
+    <End Role="UserProfile" Type="todotntModel.Store.UserProfile" Multiplicity="0..1" />
+    <End Role="Ads" Type="todotntModel.Store.Ads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Ads">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,78 @@
+﻿@model TodoSample.Models.Ad
+
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.DisplayNameFor(model => model.Title)</h2>
+
+<fieldset>
+    <legend>Ad</legend>
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Detail)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Detail)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Url)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Url)
+    </div>
+
+    <div class="display-label">
+        Category
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CategoryID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Views)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Views)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Clicks)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Clicks)
+    </div>
+
+    <div class="display-label">
+         Ad Type
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AdTypeID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Latitude)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Latitude)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Longitude)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Longitude)
+    </div>
+</fieldset>
+<p>
+   
+    @Html.ActionLink("Back to List", "Index")
+</p>
