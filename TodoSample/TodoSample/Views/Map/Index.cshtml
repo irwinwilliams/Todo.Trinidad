@@ -39,14 +39,30 @@
             $("#layers-container").append(layerToggle);
         }
 
+        function logLocs() {
+            var d = [];
+            for(var i = 0; i < layers["Ad"].length; i++) {
+                var ex = layers["Ad"][i];
+                var item = {};
+                item.lat = ex.position.lat();
+                item.long = ex.position.lng();
+                item.cat = "Ad";
+                item.name = "name";
+                item.description = "desc";
+                d.push(item);
+            }
+
+            console.log(JSON.stringify(d));
+        }
+
         function initLayers() {
             $.get("../categories", null, function (data) {
                 
                 for (var i = 0; i < data.length; i++) {
                     layers[data[i].name] = [];
-                    
                 }
                 layers[undefined] = [];
+                layers["Ad"] = [];
                 
 
                 $.get("data/tntpois.js", null, function (data) {
@@ -60,6 +76,15 @@
                         addLayerLink(layer);
                     }
                 });
+
+                $.get("data/ads.js", null, function (data) {
+                    data = JSON.parse(data);
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat);
+                    }
+
+                });
             });
 
         }
@@ -68,11 +93,16 @@
             var marker = new google.maps.Marker({
                 position: location,
                 title: name,
+                animation: google.maps.Animation.DROP,
                 map: map
             });
 
+            if (cat == "Ad") {
+                marker.setIcon("http://maps.google.com/mapfiles/ms/icons/blue-dot.png");
+            }
+
             google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent(desc);
+                infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc);
                 infowindow.open(map, marker);
             });
             
@@ -112,9 +142,9 @@
             initLayers();
 
             
-            //google.maps.event.addListener(map, 'click', function (event) {
-            //    addMarker(event.latLng);
-            //});
+            google.maps.event.addListener(map, 'click', function (event) {
+                addMarker(event.latLng, "ad", "ad", "Ad");
+            });
 
             google.maps.event.addListener(map, 'click', function () {
                 infowindow.close();
