@@ -30,6 +30,7 @@ namespace Todo.TnT
     public partial class MainPage : PhoneApplicationPage
     {
 
+        private Random rand = new Random(); 
         private ObservableCollection<ARItem> locationsTvrda;
         private string poiurl = "http://samples.anandcsingh.com/todotnt/data/tntpois.js";
         public WebClient poisService { get; set; }
@@ -65,7 +66,7 @@ namespace Todo.TnT
                            {
                                Content = item.name,
                                Description= item.description,
-                               GeoLocation = new GeoCoordinate(item.lat, item.@long, 0)
+                               GeoLocation = new GeoCoordinate(item.lat, item.@long)
                                
                            });
             foreach (var item in results)
@@ -83,7 +84,7 @@ namespace Todo.TnT
 
             {
 
-                GeoLocation = new GeoCoordinate(10.525764, -61.361553),
+                GeoLocation = new GeoCoordinate(10.665121, -61.521324),
 
                 Content = "Wild Horses",
 
@@ -91,11 +92,7 @@ namespace Todo.TnT
 
             });
 
-
-
-
-
-            ardisplay.ARItems = locationsTvrda;
+            //ardisplay.ARItems = locationsTvrda;
 
         }
 
@@ -105,6 +102,10 @@ namespace Todo.TnT
         {
 
             UIHelper.ToggleVisibility(worldView);
+            if (worldView.Visibility == System.Windows.Visibility.Visible)
+                AddNearbyLabels();
+            else
+                ardisplay.ARItems.Clear();
 
         }
 
@@ -122,7 +123,7 @@ namespace Todo.TnT
         private void mapButton_Click(object sender, EventArgs e)
         {
 
-            //  UIHelper.ToggleVisibility(overheadMap);
+            UIHelper.ToggleVisibility(overheadMap);
 
         }
 
@@ -145,19 +146,39 @@ namespace Todo.TnT
 
                 headingIndicator.RotationSource = RotationSource.North;
 
-                //overheadMap.RotationSource = RotationSource.AttitudeHeading;
+                overheadMap.RotationSource = RotationSource.AttitudeHeading;
 
             }
 
             else
             {
 
-                //overheadMap.RotationSource = RotationSource.North;
+                overheadMap.RotationSource = RotationSource.North;
 
                 headingIndicator.RotationSource = RotationSource.AttitudeHeading;
 
             }
 
+        }
+
+        private void AddNearbyLabels()
+        {
+            // Start with the current location
+            GeoCoordinate current = ardisplay.Location;
+
+            foreach (var item in locationsTvrda)
+            {
+                if (Math.Abs(current.Latitude - item.GeoLocation.Latitude) < 250
+                    && Math.Abs(current.Longitude - item.GeoLocation.Longitude) < 250)
+                {
+                    AddLabel(item);
+                }
+            }
+        }
+
+        private void AddLabel(ARItem item)
+        {
+            ardisplay.ARItems.Add(item);
         }
 
 
