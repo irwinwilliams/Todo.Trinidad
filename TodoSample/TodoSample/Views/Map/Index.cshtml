@@ -162,17 +162,31 @@
 
     <style type="text/css">
         #map-canvas {
-            width:960px;
+            width:760px;
             height:600px;
+        }
+        #layers-container {
+            width:200px;
+            float:left;
         }
         #layers-container a {
             margin:5px;
+            text-decoration:none;
+            display:block;
+            cursor:pointer;
+        }
+
+        #layers-container a:hover {
+            font-weight:bold;
         }
 
     </style>
         }
         
 
-<p id="layers-container"></p>
+<p id="layers-container">
+    <h5>Interesting Places</h5>
+
+</p>
 <div id="map-canvas">
 </div>

@@ -2,6 +2,7 @@
   <Deployment.Parts>
     <AssemblyPart x:Name="Todo.TnT" Source="Todo.TnT.dll" />
     <AssemblyPart x:Name="GART" Source="GART.dll" />
+    <AssemblyPart x:Name="ServiceStack.Text.WP" Source="ServiceStack.Text.WP.dll" />
     <AssemblyPart x:Name="Microsoft.Phone.Controls.Maps" Source="Microsoft.Phone.Controls.Maps.dll" />
   </Deployment.Parts>
 </Deployment>

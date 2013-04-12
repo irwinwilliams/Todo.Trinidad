@@ -14,3 +14,5 @@ E:\GitHub\Todo.Trinidad\TodoSample\Todo.TnT\obj\Debug\Todo.TnT.pdb
 E:\GitHub\Todo.Trinidad\TodoSample\Todo.TnT\Bin\Debug\AppManifest.xaml
 E:\GitHub\Todo.Trinidad\TodoSample\Todo.TnT\Bin\Debug\Todo.TnT.xap
 E:\GitHub\Todo.Trinidad\TodoSample\Todo.TnT\obj\Debug\XapCacheFile.xml
+E:\GitHub\Todo.Trinidad\TodoSample\Todo.TnT\Bin\Debug\ServiceStack.Text.WP.dll
+E:\GitHub\Todo.Trinidad\TodoSample\Todo.TnT\Bin\Debug\ServiceStack.Text.WP.xml

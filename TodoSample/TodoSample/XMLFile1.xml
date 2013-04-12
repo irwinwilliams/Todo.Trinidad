@@ -1,112 +1,112 @@
-﻿<?xml version='1.0' encoding='UTF-8'?>
-<feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended'>
-  <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic</id>
-  <updated>2013-04-12T03:52:08.964Z</updated>
-  <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-  <title type='text'>Stopover Visitors Trinidad &amp; Tobago (%s) 2002-2010</title>
-  <link rel='alternate' type='text/html' href='https://spreadsheets.google.com/pub?key=0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc'/>
-  <link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic'/>
-  <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic'/>
-  <author>
-    <name>irwin.williams</name>
-    <email>irwin.williams@gmail.com</email>
-  </author>
-  <openSearch:totalResults>12</openSearch:totalResults>
-  <openSearch:startIndex>1</openSearch:startIndex>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cokwr</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>January</title>
-    <content type='text'>visitingfriendsrelatives: 6.7, leisurebeachorvacation: 7.94, businessorconvention: 8.2, weddingorhoneymoon: 4.97, study: 23.55, other: 8.98</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cokwr'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cpzh4</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>February</title>
-    <content type='text'>visitingfriendsrelatives: 7.22, leisurebeachorvacation: 11.04, businessorconvention: 6.58, weddingorhoneymoon: 5.47, study: 3.96, other: 20.41</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cpzh4'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cre1l</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>March</title>
-    <content type='text'>visitingfriendsrelatives: 8.05, leisurebeachorvacation: 8.35, businessorconvention: 9.03, weddingorhoneymoon: 5.65, study: 5.6, other: 8.09</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cre1l'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/chk2m</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>April</title>
-    <content type='text'>visitingfriendsrelatives: 8.71, leisurebeachorvacation: 7.8, businessorconvention: 8.73, weddingorhoneymoon: 9.02, study: 5.86, other: 7.88</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/chk2m'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/ciyn3</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>May</title>
-    <content type='text'>visitingfriendsrelatives: 7.52, leisurebeachorvacation: 6.58, businessorconvention: 9.32, weddingorhoneymoon: 9.09, study: 5.8, other: 8.01</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/ciyn3'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/ckd7g</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>June</title>
-    <content type='text'>visitingfriendsrelatives: 8.01, leisurebeachorvacation: 6.95, businessorconvention: 8.58, weddingorhoneymoon: 10.05, study: 4.06, other: 5.74</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/ckd7g'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/clrrx</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>July</title>
-    <content type='text'>visitingfriendsrelatives: 11.06, leisurebeachorvacation: 11.04, businessorconvention: 8.67, weddingorhoneymoon: 14.01, study: 5.26, other: 8.39</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/clrrx'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cyevm</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>August</title>
-    <content type='text'>visitingfriendsrelatives: 9.36, leisurebeachorvacation: 9.48, businessorconvention: 7.48, weddingorhoneymoon: 12.49, study: 14.51, other: 7.32</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cyevm'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cztg3</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>September</title>
-    <content type='text'>visitingfriendsrelatives: 5.86, leisurebeachorvacation: 5.39, businessorconvention: 8.3, weddingorhoneymoon: 5.85, study: 14.11, other: 6.17</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cztg3'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/d180g</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>October</title>
-    <content type='text'>visitingfriendsrelatives: 6.95, leisurebeachorvacation: 6.34, businessorconvention: 9.53, weddingorhoneymoon: 6.27, study: 5.08, other: 6.44</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/d180g'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/d2mkx</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>November</title>
-    <content type='text'>visitingfriendsrelatives: 6.84, leisurebeachorvacation: 7.11, businessorconvention: 9.42, weddingorhoneymoon: 7.13, study: 6.84, other: 5.96</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/d2mkx'/>
-  </entry>
-  <entry>
-    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cssly</id>
-    <updated>2013-04-12T03:52:08.964Z</updated>
-    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
-    <title type='text'>December</title>
-    <content type='text'>visitingfriendsrelatives: 13.73, leisurebeachorvacation: 11.98, businessorconvention: 6.15, weddingorhoneymoon: 9.99, study: 5.34, other: 6.62</content>
-    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cssly'/>
-  </entry>
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns='http://www.w3.org/2005/Atom' xmlns:openSearch='http://a9.com/-/spec/opensearchrss/1.0/' xmlns:gsx='http://schemas.google.com/spreadsheets/2006/extended'>
+  <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic</id>
+  <updated>2013-04-12T03:52:08.964Z</updated>
+  <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+  <title type='text'>Stopover Visitors Trinidad &amp; Tobago (%s) 2002-2010</title>
+  <link rel='alternate' type='text/html' href='https://spreadsheets.google.com/pub?key=0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc'/>
+  <link rel='http://schemas.google.com/g/2005#feed' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic'/>
+  <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic'/>
+  <author>
+    <name>irwin.williams</name>
+    <email>irwin.williams@gmail.com</email>
+  </author>
+  <openSearch:totalResults>12</openSearch:totalResults>
+  <openSearch:startIndex>1</openSearch:startIndex>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cokwr</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>January</title>
+    <content type='text'>visitingfriendsrelatives: 6.7, leisurebeachorvacation: 7.94, businessorconvention: 8.2, weddingorhoneymoon: 4.97, study: 23.55, other: 8.98</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cokwr'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cpzh4</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>February</title>
+    <content type='text'>visitingfriendsrelatives: 7.22, leisurebeachorvacation: 11.04, businessorconvention: 6.58, weddingorhoneymoon: 5.47, study: 3.96, other: 20.41</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cpzh4'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cre1l</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>March</title>
+    <content type='text'>visitingfriendsrelatives: 8.05, leisurebeachorvacation: 8.35, businessorconvention: 9.03, weddingorhoneymoon: 5.65, study: 5.6, other: 8.09</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cre1l'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/chk2m</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>April</title>
+    <content type='text'>visitingfriendsrelatives: 8.71, leisurebeachorvacation: 7.8, businessorconvention: 8.73, weddingorhoneymoon: 9.02, study: 5.86, other: 7.88</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/chk2m'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/ciyn3</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>May</title>
+    <content type='text'>visitingfriendsrelatives: 7.52, leisurebeachorvacation: 6.58, businessorconvention: 9.32, weddingorhoneymoon: 9.09, study: 5.8, other: 8.01</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/ciyn3'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/ckd7g</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>June</title>
+    <content type='text'>visitingfriendsrelatives: 8.01, leisurebeachorvacation: 6.95, businessorconvention: 8.58, weddingorhoneymoon: 10.05, study: 4.06, other: 5.74</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/ckd7g'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/clrrx</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>July</title>
+    <content type='text'>visitingfriendsrelatives: 11.06, leisurebeachorvacation: 11.04, businessorconvention: 8.67, weddingorhoneymoon: 14.01, study: 5.26, other: 8.39</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/clrrx'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cyevm</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>August</title>
+    <content type='text'>visitingfriendsrelatives: 9.36, leisurebeachorvacation: 9.48, businessorconvention: 7.48, weddingorhoneymoon: 12.49, study: 14.51, other: 7.32</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cyevm'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cztg3</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>September</title>
+    <content type='text'>visitingfriendsrelatives: 5.86, leisurebeachorvacation: 5.39, businessorconvention: 8.3, weddingorhoneymoon: 5.85, study: 14.11, other: 6.17</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cztg3'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/d180g</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>October</title>
+    <content type='text'>visitingfriendsrelatives: 6.95, leisurebeachorvacation: 6.34, businessorconvention: 9.53, weddingorhoneymoon: 6.27, study: 5.08, other: 6.44</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/d180g'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/d2mkx</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>November</title>
+    <content type='text'>visitingfriendsrelatives: 6.84, leisurebeachorvacation: 7.11, businessorconvention: 9.42, weddingorhoneymoon: 7.13, study: 6.84, other: 5.96</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/d2mkx'/>
+  </entry>
+  <entry>
+    <id>https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cssly</id>
+    <updated>2013-04-12T03:52:08.964Z</updated>
+    <category scheme='http://schemas.google.com/spreadsheets/2006' term='http://schemas.google.com/spreadsheets/2006#list'/>
+    <title type='text'>December</title>
+    <content type='text'>visitingfriendsrelatives: 13.73, leisurebeachorvacation: 11.98, businessorconvention: 6.15, weddingorhoneymoon: 9.99, study: 5.34, other: 6.62</content>
+    <link rel='self' type='application/atom+xml' href='https://spreadsheets.google.com/feeds/list/0AqDm6Izoam4OdEpMN2VLT3RxV0szRThYOVA4VUhrdmc/ocx/public/basic/cssly'/>
+  </entry>
 </feed>
