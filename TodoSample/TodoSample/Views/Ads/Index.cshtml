@@ -5,6 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section HeadSection {
+
+   <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+ 
+@*<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+    <script>
+        $(function () {
+            $("#listo").dataTable();
+        });
+    </script>*@
+}
 <h2>My Ads</h2>
 
 <p>
@@ -12,7 +24,7 @@
 </p>
 @if (Model.Any())
 {
-    <table>
+    <table id="listo" class="dataTable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.UserID)
@@ -27,7 +39,7 @@
             @Html.DisplayNameFor(model => model.Url)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CategoryID)
+            Category
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Views)
@@ -36,7 +48,7 @@
             @Html.DisplayNameFor(model => model.Clicks)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AdTypeID)
+            Ad Type
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Latitude)
@@ -62,7 +74,7 @@
             @Html.DisplayFor(modelItem => item.Url)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CategoryID)
+            @Html.DisplayFor(modelItem => item.Category.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Views)
@@ -71,7 +83,7 @@
             @Html.DisplayFor(modelItem => item.Clicks)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AdTypeID)
+            @Html.DisplayFor(modelItem => item.AdType.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Latitude)
@@ -81,7 +93,7 @@
         </td>
         <td>
             @*Html.ActionLink("Edit", "Edit", new { id=item.ID }) |*@
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Details", "View", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
     </tr>
