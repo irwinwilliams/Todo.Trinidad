@@ -9,13 +9,52 @@
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaUK25OBJxjVADJr7p9wlKcpwu2D4_KVc&sensor=true"></script>
     <script  type="text/javascript">
         var map;
-        var layers = [];
+        var layers = {};
         var infowindow = new google.maps.InfoWindow(
   {
       size: new google.maps.Size(150, 50)
   });
-        function initMarkers() {
 
+        function addLayerLink(name) {
+            var layerToggle = $("<a>");
+            layerToggle.html("Hide " + name);
+            layerToggle.attr("data-state", "hide");
+            layerToggle.attr("data-name", name);
+            layerToggle.click(function () {
+                var anchor = $(this);
+                if (anchor.attr("data-state") == "hide") {
+                    anchor.attr("data-state", "show");
+                    anchor.html("Show " + anchor.attr("data-name"));
+                    hideLayer(anchor.attr("data-name"));
+                }
+                else {
+                    anchor.attr("data-state", "hide");
+                    anchor.html("Hide " + anchor.attr("data-name"));
+                    showLayer(anchor.attr("data-name"));
+                }
+
+            });
+            $("#layers-container").append(layerToggle);
+        }
+
+        function initLayers() {
+            $.get("../categories", null, function (data) {
+                
+                for (var i = 0; i < data.length; i++) {
+                    layers[data[i].name] = [];
+                    addLayerLink(data[i].name);
+                }
+                layers[undefined] = [];
+                addLayerLink("undefined");
+
+                $.get("data/tntpois.js", null, function (data) {
+                    data = JSON.parse(data);
+                    for (var i = 0; i < data.length; i++) {
+                        var item = data[i];
+                        addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat);
+                    }
+                });
+            });
 
         }
 
@@ -30,6 +69,8 @@
                 infowindow.setContent(desc);
                 infowindow.open(map, marker);
             });
+            
+            layers[cat].push(marker);
         }
 
         function hideLayer(layerIndex) {
@@ -62,15 +103,9 @@
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
             map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            initLayers();
 
-            $.get("data/tntpois.js", null, function (data) {
-                data = JSON.parse(data);
-                for (var i = 0; i < data.length; i++) {
-                    var item = data[i];
-                    addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat);
-                }
-            });
-
+            
             //google.maps.event.addListener(map, 'click', function (event) {
             //    addMarker(event.latLng);
             //});
@@ -93,6 +128,6 @@
         }
         
 
-
+<div id="layers-container"></div>
 <div id="map-canvas">
 </div>
