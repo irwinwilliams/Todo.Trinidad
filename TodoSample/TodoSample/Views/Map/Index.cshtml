@@ -17,23 +17,25 @@
 
         function addLayerLink(name) {
             var layerToggle = $("<a>");
-            layerToggle.html("Hide " + name);
+            layerToggle.html("Hide " + name + " (" + layers[name].length + ")");
             layerToggle.attr("data-state", "hide");
             layerToggle.attr("data-name", name);
             layerToggle.click(function () {
                 var anchor = $(this);
+                var aName = anchor.attr("data-name");
                 if (anchor.attr("data-state") == "hide") {
                     anchor.attr("data-state", "show");
-                    anchor.html("Show " + anchor.attr("data-name"));
-                    hideLayer(anchor.attr("data-name"));
+                    anchor.html("Show " + aName + " (" + layers[aName].length + ")" );
+                    hideLayer(aName);
                 }
                 else {
                     anchor.attr("data-state", "hide");
-                    anchor.html("Hide " + anchor.attr("data-name"));
-                    showLayer(anchor.attr("data-name"));
+                    anchor.html("Hide " + aName + " (" + layers[aName].length + ")");
+                    showLayer(aName);
                 }
 
             });
+
             $("#layers-container").append(layerToggle);
         }
 
@@ -42,16 +44,20 @@
                 
                 for (var i = 0; i < data.length; i++) {
                     layers[data[i].name] = [];
-                    addLayerLink(data[i].name);
+                    
                 }
                 layers[undefined] = [];
-                addLayerLink("undefined");
+                
 
                 $.get("data/tntpois.js", null, function (data) {
                     data = JSON.parse(data);
                     for (var i = 0; i < data.length; i++) {
                         var item = data[i];
                         addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat);
+                    }
+
+                    for (layer in layers) {
+                        addLayerLink(layer);
                     }
                 });
             });
@@ -123,11 +129,14 @@
             width:960px;
             height:600px;
         }
+        #layers-container a {
+            margin:5px;
+        }
 
     </style>
         }
         
 
-<div id="layers-container"></div>
+<p id="layers-container"></p>
 <div id="map-canvas">
 </div>
