@@ -81,7 +81,8 @@
                     data = JSON.parse(data);
                     for (var i = 0; i < data.length; i++) {
                         var item = data[i];
-                        addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat);
+                        item.url = "http://www.kfc-tt.com/";
+                        addMarker(new google.maps.LatLng(item.lat, item.long), item.name, item.description, item.cat, item.url);
                     }
 
                 });
@@ -89,11 +90,12 @@
 
         }
 
-        function addMarker(location, name, desc, cat) {
+        function addMarker(location, name, desc, cat, link) {
             var marker = new google.maps.Marker({
                 position: location,
                 title: name,
                 animation: google.maps.Animation.DROP,
+                url: link,
                 map: map
             });
 
@@ -102,7 +104,11 @@
             }
 
             google.maps.event.addListener(marker, 'click', function () {
-                infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc);
+                if (this.url) {
+                    infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc + "<br/><a target='_blank' href='" + this.url + "'>" + this.url + "</a>");
+                } else {
+                    infowindow.setContent("<strong>" + marker.getTitle() + "</strong><br/>" + desc);
+                }
                 infowindow.open(map, marker);
             });
             
@@ -142,9 +148,9 @@
             initLayers();
 
             
-            google.maps.event.addListener(map, 'click', function (event) {
-                addMarker(event.latLng, "ad", "ad", "Ad");
-            });
+            //google.maps.event.addListener(map, 'click', function (event) {
+            //    addMarker(event.latLng, "ad", "ad", "Ad");
+            //});
 
             google.maps.event.addListener(map, 'click', function () {
                 infowindow.close();
