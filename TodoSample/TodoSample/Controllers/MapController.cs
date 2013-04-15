@@ -16,7 +16,10 @@ namespace TodoSample.Controllers
             return View();
         }
 
-        
 
+        public ActionResult AppLocations()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "TodoTnT";
+}
+
+@section HeadSection {
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://www.datatables.net/release-datatables/media/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaUK25OBJxjVADJr7p9wlKcpwu2D4_KVc&sensor=true"></script>
+    <script  type="text/javascript">
+        var map;
+        var layers = [];
+
+        function logLocs() {
+            var d = [];
+            for (var i = 0; i < layers.length; i++) {
+                var ex = layers[i];
+                var item = {};
+                item.lat = ex.position.lat();
+                item.long = ex.position.lng();
+                item.cat = "POI";
+                item.name = ex.title;
+                item.description = ex.desc;
+                d.push(item);
+            }
+
+            console.log(JSON.stringify(d));
+        }
+
+        function addMarker(location, name, desc, cat, link, isAd) {
+            var marker = new google.maps.Marker({
+                position: location,
+                title: name,
+                animation: google.maps.Animation.DROP,
+                url: link,
+                map: map
+            });
+            layers.push(marker);
+        }
+
+        
+        function initialize() {
+            var mapOptions = {
+                zoom: 9,
+                center: new google.maps.LatLng(10.70, -61.3152),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+            
+            addMarker(new google.maps.LatLng(10.6655, -61.5216));
+
+
+            google.maps.event.addListener(map, 'click', function (event) {
+                addMarker(event.latLng, $('#nameTxt').val(), $('#descTxt').val());
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+    <style type="text/css">
+        #map-canvas {
+            width:760px;
+            height:600px;
+        }
+        #layers-container {
+            width:200px;
+            float:left;
+        }
+        #layers-container a {
+            margin:5px;
+            text-decoration:none;
+            display:block;
+            cursor:pointer;
+        }
+
+        #layers-container a:hover {
+            font-weight:bold;
+        }
+
+    </style>
+        }
+
+<p id="layers-container">
+    <h5>Interesting Places</h5>
+
+</p>
+
+<p>
+    <input type="text" name="nameTxt" id="nameTxt" placeholder="Name" value=" " />
+    <br />
+    <input type="text" name="descTxt" id="descTxt" placeholder="Description" value=" " />
+
+
+</p>
+<div id="map-canvas">
+</div>
